@@ -30,7 +30,7 @@ public:
     }
 
 private:
-    int run(int iarg, void *parg);
+    int run(void);
 
 private:
     double speed;

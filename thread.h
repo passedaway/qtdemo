@@ -12,10 +12,10 @@ public:
 private:
     static void* srun(void *args);
     int nv_run(void); //not vritual function ==> nv
-    virtual int run(int iarg, void *parg) = 0;
+    virtual int run(void) = 0;
 
 public:
-    int threadCreate(int iarg, void *args);
+    int threadCreate(void);
     int threadExit(void);
     int threadDestroy(void);
     thread_t threadId() {return thread_id;}
@@ -23,8 +23,6 @@ public:
 
 private:
     thread_t thread_id;
-    int iarg;
-    void *parg;
     bool _isReady;
 };
 

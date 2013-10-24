@@ -17,7 +17,7 @@ int TcpClient::start(void)
     fflush(stdout);
 #endif
     isRun = true;
-    threadCreate(ip, (void*)path);
+    threadCreate();
     return 0;
 }
 
@@ -30,11 +30,12 @@ int TcpClient::stop(void)
 
 #include <time.h>
 //implement run
-int TcpClient::run(int iarg, void *parg)
+int TcpClient::run()
 {
     while(isRun)
     {
-        printf("Run %d : iarg = %d, parg=%p %d\n", threadId(), iarg, parg, time(NULL));
+        printf("Run %d : ip= %d, port=%d path=%s %d\n", 
+				threadId(), ip, port, path, time(NULL));
         fflush(stdout);
         sleep(500);
         cur_bytes += 100;

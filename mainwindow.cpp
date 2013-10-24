@@ -49,7 +49,7 @@ void MainWindow::on_pushButtonStart_clicked()
 
    if(tcpClient == NULL )
    {
-       tcpClient = new TcpClient(1234, 123, (const char*)this);
+       tcpClient = new TcpClient(1234, 123, "D:/tmp");
    }
      tcpClient->start();
 

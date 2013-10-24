@@ -25,16 +25,14 @@ void* Thread::srun(void *args)
  int Thread::nv_run(void)
  {
      //call child run function
-     int ret = this->run(iarg, parg);
+     int ret = this->run();
      //threadExit();//will not return
      return ret;
  }
 
 //public
-int Thread::threadCreate(int iarg, void *args)
+int Thread::threadCreate(void)
 {
-	this->iarg = iarg;
-	this->parg = args;
     //set isReady
     _isReady = true;
 
